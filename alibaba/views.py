@@ -16,7 +16,7 @@ def sig(r):
                 form.save()
                 return render(r,'signupin.html')
             except:
-                return HttpResponse('formnot saved')
+                return HttpResponse('form not saved')
         else:
             form=UserForm()
             return render(r,'signupin.html')
