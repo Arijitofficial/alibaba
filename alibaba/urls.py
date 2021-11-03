@@ -4,4 +4,6 @@ from . import views
 
 urlpatterns=[
             path('new',views.new),
+            path('',views.signupin),
+            path('sig',views.sig),
             ]

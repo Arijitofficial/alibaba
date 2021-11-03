@@ -12,3 +12,7 @@ class product(models.Model):
     product_count = models.IntegerField(default=4)
     class meta:
         db_table = 'product'
+
+class user(models.Model):
+    email=models.EmailField()
+    pd=models.CharField(max_length=50)
