@@ -1,6 +1,6 @@
 from django import forms
-from alibaba.models import user
+from alibaba.models import userinfo
 class UserForm(forms.ModelForm):
     class Meta:
-        model=user
+        model=userinfo
         fields='__all__'
