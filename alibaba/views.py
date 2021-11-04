@@ -19,7 +19,7 @@ def sig(r):
         if pd and cpd and pd != cpd:
             context = {}
             context["mismatch"] = 1
-            context["message"] = 'Password mismatch'
+            context["message"] = 'Password and confirm password is not matching'
             return render(r,'signupin.html', context)
         _mutable = r.POST._mutable
         r.POST._mutable = True
