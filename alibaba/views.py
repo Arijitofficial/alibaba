@@ -7,11 +7,11 @@ from django import forms
 # Create your views here.
 
 def new(r):
+    return HttpResponse('testing')
+def signupin(r):
     context = {}
     context["mismatch"] = 0
-    return HttpResponse('testing', context)
-def signupin(r):
-    return render(r,'signupin.html')
+    return render(r,'signupin.html', context)
 def sig(r):
     if r.method=='POST':
         pd = r.POST.get('pd')
