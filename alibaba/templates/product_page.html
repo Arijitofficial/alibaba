@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%load static%}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutorial</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <!-- CSS -->
+    <link href="{% static 'css/product.css' %}" rel="stylesheet">
+    <meta name="robots" content="noindex,follow" />
+
+  </head>
+
+  <body>
+    <main class="container">
+
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="red" class="active" src="{{ product.image }}" alt="">
+      </div>
+
+
+      <!-- Right Column -->
+      <div class="right-column">
+
+        <!-- Product Description -->
+        <div class="product-description">
+          <span>{{ product.category }}</span>
+          <h1>{{ name }}</h1>
+          <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
+        </div>
+
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+
+          <!-- Product Color -->
+          <div class="cable-config">
+            <span>colors</span>
+
+            <div class="cable-choose">
+              {% for color in colors %}
+              <button type="radio" name="color">{{ color }}</button>
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- Cable Configuration -->
+          <div class="cable-config">
+            <span>sizes</span>
+
+            <div class="cable-choose">
+              {% for i in size %}
+              <button name="size">{{ i }} {{ c }}</button>
+              {% endfor %}
+            </div>
+            <a href="#">How to choose your shoes</a>
+          </div>
+        </div>
+
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span>₹{{product.price}}</span>
+          <a href="/././alibaba/add_to_cart/{{product.id}}" class="cart-btn">Add to cart</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+  </body>
+</html>
